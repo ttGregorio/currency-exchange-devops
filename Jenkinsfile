@@ -14,8 +14,8 @@ pipeline {
 	stages {
 		stage('Checkout') {
 			steps {
-				bat 'mvn --version'
-				bat 'docker version'
+				sh 'mvn --version'
+				sh 'docker version'
 				echo "Build"
 				echo "PATH - $PATH"
 				echo "BUILD_NUMBER - $env.BUILD_NUMBER"
@@ -27,31 +27,30 @@ pipeline {
 		}
 		stage('Compile') {
 			steps {
-				bat "mvn clean compile"
+				sh "mvn clean compile"
 			}
 		}
 
 		stage('Test') {
 			steps {
-				bat "mvn test"
+				sh "mvn test"
 			}
 		}
 
 		stage('Integration Test') {
 			steps {
-				bat "mvn failsafe:integration-test failsafe:verify"
+				sh "mvn failsafe:integration-test failsafe:verify"
 			}
 		}
 
 		stage('Package') {
 			steps {
-				bat "mvn package -DskipTests"
+				sh "mvn package -DskipTests"
 			}
 		}
 
 		stage('Build Docker Image') {
 			steps {
-				bat "docker build -t thiagogregorio/currency-exchange-devops:$env.BUILD_TAG ."
 				//"docker build -t thiagogregorio/currency-exchange-devops:$env.BUILD_TAG"
 				script {
 					dockerImage = docker.build("thiagogregorio/currency-exchange-devops:${env.BUILD_TAG}")

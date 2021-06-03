@@ -1,0 +1,6 @@
+D:\workspace\testes\microservices\jenkin-devops-microservice\src\test\java\br\com\nex2you\api\cucumber\RunCucumberIntegrationTestCase.java
+D:\workspace\testes\microservices\jenkin-devops-microservice\src\test\java\br\com\nex2you\api\CurrencyExchangeServiceApplicationTests.java
+D:\workspace\testes\microservices\jenkin-devops-microservice\src\test\java\br\com\nex2you\api\resource\CurrencyExchangeControllerTest.java
+D:\workspace\testes\microservices\jenkin-devops-microservice\src\test\java\br\com\nex2you\api\cucumber\CurrencyExchangeSteps.java
+D:\workspace\testes\microservices\jenkin-devops-microservice\src\test\java\br\com\nex2you\api\cucumber\CucumberSpringContextConfiguration.java
+D:\workspace\testes\microservices\jenkin-devops-microservice\src\test\java\br\com\nex2you\api\cucumber\HelloWorldSteps.java

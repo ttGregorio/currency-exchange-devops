@@ -12,8 +12,6 @@ import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 
-import static org.junit.Assert.assertTrue;
-
 import org.junit.Assert;
 
 import static io.restassured.RestAssured.when;
@@ -45,7 +43,6 @@ public class CurrencyExchangeSteps {
     @Then("^It should output (.*)$")
     public void thenCheckOutput(float response) {
        Assert.assertEquals(output, response,0.5);
-       assertTrue(false);
 
     }
 

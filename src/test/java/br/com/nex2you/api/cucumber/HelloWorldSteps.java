@@ -30,8 +30,6 @@ public class HelloWorldSteps {
     @Then("^It should return (.*)$")
     public void thenCheckOutput(String response) {
         Assert.assertEquals(output, response);
-
-        assertTrue(false);
     }
 
 

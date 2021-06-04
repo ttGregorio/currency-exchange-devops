@@ -42,5 +42,7 @@ public class CurrencyExchangeControllerTest {
     public void retrieveExchangeValue() throws Exception {
         Mockito.when(repository.findByFromAndTo("EUR", "INR")).thenReturn(new ExchangeValue(Long.getLong("1"), "EUR", "INR", BigDecimal.valueOf(80.00)));
         mvc.perform(get("/api/from/EUR/to/INR")).andExpect(status().isOk());
+        
+        assertTrue(false);
     }
 }

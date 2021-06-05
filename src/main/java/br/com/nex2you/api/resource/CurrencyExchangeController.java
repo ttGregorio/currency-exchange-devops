@@ -28,16 +28,16 @@ public class CurrencyExchangeController {
 		return "{healthy:true}";
 	}
 
-	//http://localhost:8000/currency-exchange/from/USD/to/INR
-	@GetMapping("/api/from/{from}/to/{to}")
+	@GetMapping("/from/{from}/to/{to}")
 	public ExchangeValue retrieveExchangeValue(@PathVariable String from, @PathVariable String to,
 			@RequestHeader Map<String, String> headers) {
+		LOGGER.info("[{}][retrieveExchangeValue][from: {}][to: {}]", this.getClass().getName(), from, to);
 
 		printAllHeaders(headers);
 
 		ExchangeValue exchangeValue = repository.findByFromAndTo(from, to);
 
-		LOGGER.info("{} {} {}", from, to, exchangeValue);
+		LOGGER.info("[from: {}][to: {}][exchangeValue: {}]", from, to, exchangeValue);
 
 		if (exchangeValue == null) {
 			throw new RuntimeException("Unable to find data to convert " + from + " to " + to);
@@ -45,6 +45,8 @@ public class CurrencyExchangeController {
 
 		exchangeValue.setExchangeEnvironmentInfo(instanceInformationService.retrieveInstanceInfo());
 
+		LOGGER.info("[{}][retrieveExchangeValue][exchangeValue: {}][to: {}]", this.getClass().getName(),
+				exchangeValue.toString());
 		return exchangeValue;
 	}
 

@@ -1,4 +1,4 @@
-package br.com.nex2you.api.resource;
+package br.com.nex2you.api.controller;
 
 import java.util.Map;
 
@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.nex2you.api.model.ExchangeValue;
+import br.com.nex2you.api.repository.ExchangeValueRepository;
 import br.com.nex2you.api.util.environment.InstanceInformationService;
 
 @RestController

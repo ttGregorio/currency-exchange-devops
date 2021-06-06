@@ -2,11 +2,13 @@ package br.com.nex2you.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
-public class CurrencyExchangeServiceApplicationH2 {
+@EnableDiscoveryClient
+public class CurrencyExchangeServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CurrencyExchangeServiceApplicationH2.class, args);
+		SpringApplication.run(CurrencyExchangeServiceApplication.class, args);
 	}
 }

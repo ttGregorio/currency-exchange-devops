@@ -4,7 +4,7 @@ Build-Jdk: 15
 Implementation-Title: currency-exchange
 Implementation-Version: 0.0.1-RELEASE
 Implementation-Vendor-Id: br.com.nex2you.api
-Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
- -starter-parent/currency-exchange-basic
+Implementation-URL: https://spring.io/projects/spring-boot/currency-exch
+ ange-basic
 Created-By: Maven Integration for Eclipse
 
